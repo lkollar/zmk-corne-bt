@@ -69,8 +69,8 @@
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
             // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | ENTR |
-            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | ./, | '/" |  /* | EQU |
-            //                    | GUI | LWR | SPC |   | SPC | L2   | L1  |
+            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | ./, | '/" |  /* | ESC |
+            //                    | GUI | ALT | SPC |   | SPC | L2   | L1  |
 
             bindings = <
 &kp TAB         &kp Q  &kp W  &kp E     &kp R         &kp T        &kp Y      &kp U  &kp I          &kp O                  &kp P          &kp BSPC
@@ -82,13 +82,13 @@
 
         lower_layer {
             // -----------------------------------------------------------------------------------------
-            // | SYSR |     |     |     |     |     |   |     |  1  |  2  |  3  |  0  |      |
+            // |      |     |     |     |     |     |   |     |  1  |  2  |  3  |  0  |      |
             // |      |     |     | UP  |     |     |   |     |  4  |  5  |  6  |     |      |
             // |      |     | LFT | DWN | RGT |     |   |     |  7  |  8  |  9  |     |      |
             //                    |     |     | SPC |   | SPC |     |     |
 
             bindings = <
-&sys_reset  &trans  &trans    &trans    &trans     &trans       &trans   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0  &trans
+&trans      &trans  &trans    &trans    &trans     &trans       &trans   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0  &trans
 &trans      &trans  &trans    &kp UP    &trans     &trans       &trans   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans
 &trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans       &trans   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans  &trans
                               &trans    &trans     &kp SPACE    &kp SPACE  &trans        &trans
