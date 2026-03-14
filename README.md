@@ -74,31 +74,31 @@ The matrix configuration uses GPIO pins on the nRF52840 Pro Micro clone. Below a
 
 #### Left Half Pin Assignments
 - **Rows (Connected to `row-gpios`)**:
-  - Row 0: Pin 21
-  - Row 1: Pin 20
-  - Row 2: Pin 19
-  - Row 3: Pin 18
+  - Row 0: `P0.31`
+  - Row 1: `P0.29`
+  - Row 2: `P0.02`
+  - Row 3: `P1.15`
 - **Columns (Connected to `col-gpios`)**:
-  - Column 0: Pin 2
-  - Column 1: Pin 7
-  - Column 2: Pin 6
-  - Column 3: Pin 5
-  - Column 4: Pin 4
-  - Column 5: Pin 3
+  - Column 0: `P0.17`
+  - Column 1: `P0.11`
+  - Column 2: `P1.00`
+  - Column 3: `P0.24`
+  - Column 4: `P0.22`
+  - Column 5: `P0.20`
 
 #### Right Half Pin Assignments
 - **Rows (`row-gpios`)**:
-  - Row 0: Pin 21
-  - Row 1: Pin 20
-  - Row 2: Pin 19
-  - Row 3: Pin 18
+  - Row 0: `P0.31`
+  - Row 1: `P0.29`
+  - Row 2: `P0.02`
+  - Row 3: `P1.15`
 - **Columns (`col-gpios`)**:
-  - Column 0: Pin 3
-  - Column 1: Pin 4
-  - Column 2: Pin 5
-  - Column 3: Pin 6
-  - Column 4: Pin 7
-  - Column 5: Pin 2
+  - Column 0: `P0.20`
+  - Column 1: `P0.22`
+  - Column 2: `P0.24`
+  - Column 3: `P1.00`
+  - Column 4: `P0.11`
+  - Column 5: `P0.17`
 
 ### Firmware Setup
 This keyboard uses ZMK firmware. The left half acts as the main controller that connects to your device.
@@ -152,4 +152,3 @@ If you forgot the keyboard from your device and can't reconnect:
 ## Final result
 ![im1](https://github.com/user-attachments/assets/f57abe5a-585d-4f4e-b741-5c103c7af887)
 ![im3](https://github.com/user-attachments/assets/1ed52801-5bc1-44b9-8378-1a5e53600e92)
-
