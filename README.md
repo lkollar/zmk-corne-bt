@@ -75,7 +75,7 @@ The matrix configuration uses GPIO pins on the nRF52840 Pro Micro clone. Below a
 #### Left Half Pin Assignments
 - **Rows (Connected to `row-gpios`)**:
   - Row 0: `P0.31`
-  - Row 1: `P0.29`
+  - Row 1: `P1.13`
   - Row 2: `P0.02`
   - Row 3: `P1.15`
 - **Columns (Connected to `col-gpios`)**:

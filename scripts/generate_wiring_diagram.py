@@ -74,13 +74,17 @@ def parse_nice_nano_labels() -> dict[int, str]:
 
 
 def parse_zmk_config() -> dict[str, object]:
-    rows = parse_gpio_list(CORNE_DTSI, "row-gpios")
+    shared_rows = parse_gpio_list(CORNE_DTSI, "row-gpios")
+    left_text = LEFT_OVERLAY.read_text()
+    right_text = RIGHT_OVERLAY.read_text()
+    left_rows = parse_gpio_list(LEFT_OVERLAY, "row-gpios") if "row-gpios" in left_text else shared_rows
+    right_rows = parse_gpio_list(RIGHT_OVERLAY, "row-gpios") if "row-gpios" in right_text else shared_rows
     left_cols = parse_gpio_list(LEFT_OVERLAY, "col-gpios")
     right_cols = parse_gpio_list(RIGHT_OVERLAY, "col-gpios")
     labels = parse_nice_nano_labels()
     return {
-        "left": {"rows": rows, "cols": left_cols},
-        "right": {"rows": rows, "cols": right_cols},
+        "left": {"rows": left_rows, "cols": left_cols},
+        "right": {"rows": right_rows, "cols": right_cols},
         "labels": labels,
     }
 
