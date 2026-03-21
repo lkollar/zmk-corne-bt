@@ -1,0 +1,16 @@
+
+.zmk/
+.venv-zephyr/
+.tooling/
+.west/
+.uv-cache/
+.uv-tools/
+.cache/
+build/
+debug/
+modules/
+zmk/
+zephyr/
+.tmp-keymap/
+keymap.png
+keymap.pdf

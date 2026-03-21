@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <common/nordic/nrf52840_uf2_boot_mode.dtsi>
 
 / {
     chosen {

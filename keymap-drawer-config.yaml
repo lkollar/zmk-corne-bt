@@ -1,0 +1,8 @@
+draw_config:
+  footer_text: "Miryoku ZMK | QWERTY | Mac clipboard"
+  append_colon_to_layer_header: false
+  style_layer_activators: true
+  separate_combo_diagrams: true
+parse_config:
+  preprocess: true
+  zmk_preamble: "#define KEYMAP_DRAWER"

@@ -26,11 +26,36 @@ A DIY wireless split keyboard based on the Corne layout, built for approximately
 
 ## Current Keymap
 
-![image](https://github.com/user-attachments/assets/362ff580-5528-4f7a-ad09-1fa24acbc6c7)
-![image](https://github.com/user-attachments/assets/3da97ceb-8e2a-43c5-a241-cf9ad4206688)
-![image](https://github.com/user-attachments/assets/e262846d-57bf-43b6-b32c-b7e37d3ebb8c)
-![image](https://github.com/user-attachments/assets/2a8999cc-e58c-4d51-a142-067cb7ca768c)
-![image](https://github.com/user-attachments/assets/06909fd8-bb4d-4956-88a1-f5d6a8b80e5f)
+Current layout is a Corne port of the Canorus/do42 `brokenaxe` QWERTY layout:
+- [Canorus/do42 repo](/Users/lkollar/src/tries/2026-03-21-Canorus-do42-do52/keymaps/brokenaxe/keymap.c)
+
+Main goals:
+- use all 6 cols on Corne
+- keep layer roles close to Canorus
+- keep board switching cheap mentally
+
+Notable Corne-specific compressions:
+- `TAB` is `LGUI` on hold
+- right thumb outer is `RALT` on tap, `RGUI` on hold
+- `ENTER` is `FUNC` on hold
+
+Generated local keymap diagram:
+
+![Current keymap](keymap.svg)
+
+Regenerate with:
+
+```bash
+./scripts/render_keymap.sh
+```
+
+Local keymap entry point:
+- [config/corne.keymap](config/corne.keymap)
+
+### Bootloader key
+
+- Use hardware reset for reliability on split boards:
+- short `RST` to `GND` twice
 
 ## Build Instructions
 
@@ -81,10 +106,10 @@ The matrix configuration uses GPIO pins on the nRF52840 Pro Micro clone. Below a
 - **Columns (Connected to `col-gpios`)**:
   - Column 0: `P0.17`
   - Column 1: `P0.11`
-  - Column 2: `P1.00`
-  - Column 3: `P0.24`
+  - Column 2: `P0.24`
+  - Column 3: `P1.00`
   - Column 4: `P0.22`
-  - Column 5: `P0.20`
+  - Column 5: `P1.06`
 
 #### Right Half Pin Assignments
 - **Rows (`row-gpios`)**:
