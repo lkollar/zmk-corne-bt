@@ -20,13 +20,13 @@ uv pip install --python .venv-zephyr/bin/python -r zephyr/scripts/requirements-b
 - Left:
 
 ```bash
-.venv-zephyr/bin/west build -p always -s zmk/app -d build/corne_left -b nice_nano -- -DZMK_CONFIG=$PWD/config -DSHIELD=corne_left
+CCACHE_DISABLE=1 .venv-zephyr/bin/west build -p always -s zmk/app -d build/corne_left -b nice_nano -- -DZMK_CONFIG=$PWD/config -DSHIELD=corne_left -DSNIPPET=zmk-usb-logging
 ```
 
 - Right:
 
 ```bash
-.venv-zephyr/bin/west build -p always -s zmk/app -d build/corne_right -b nice_nano -- -DZMK_CONFIG=$PWD/config -DSHIELD=corne_right
+CCACHE_DISABLE=1 .venv-zephyr/bin/west build -p always -s zmk/app -d build/corne_right -b nice_nano -- -DZMK_CONFIG=$PWD/config -DSHIELD=corne_right -DSNIPPET=zmk-usb-logging
 ```
 
 ## Board naming
@@ -52,6 +52,29 @@ uv pip install --python .venv-zephyr/bin/python -r zephyr/scripts/requirements-b
 - Convenience copies:
   `firmware/corne_left-nice_nano_v2-zmk.uf2`
   `firmware/corne_right-nice_nano_v2-zmk.uf2`
+
+## Current keymap
+
+- Current layout is not Miryoku.
+- It is a custom 42-key Corne layout based on the Canorus/do42
+  `brokenaxe` QWERTY layout.
+- Main source:
+  `config/corne.keymap`
+- Uses all 6 columns.
+- `Tab` is `LGUI` on hold.
+- Right outer thumb is `RALT` on tap, `RGUI` on hold.
+- `Enter` is `FUNC` on hold.
+- Caps Word is on both shifts combo.
+
+## Rendered keymap
+
+- Source render script:
+  `scripts/render_keymap.sh`
+- Config:
+  `keymap-drawer-config.yaml`
+- Main checked-in asset:
+  `keymap.svg`
+- PNG/PDF are intentionally ignored.
 
 ## Split battery config
 
@@ -87,6 +110,17 @@ CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=y
 - `config/boards` deprecation warning appears in this repo. Build still works.
 - `KSCAN` deprecated warning appears. Build still works.
 
+## Current wiring facts
+
+- Left `C5` was remapped away from bad original pin.
+- Current left columns:
+  - `C0 P0.17`
+  - `C1 P0.11`
+  - `C2 P0.24`
+  - `C3 P1.00`
+  - `C4 P0.22`
+  - `C5 P1.06`
+
 ## Useful checks
 
 - Verify split BLE flags:
@@ -106,3 +140,5 @@ ls -lh build/corne_left/zephyr/zmk.uf2 build/corne_right/zephyr/zmk.uf2
 - Put each half into bootloader mode.
 - Flash left with `firmware/corne_left-nice_nano_v2-zmk.uf2`
 - Flash right with `firmware/corne_right-nice_nano_v2-zmk.uf2`
+- As of latest known state, both halves were flashed with current layout
+  incl Caps Word.
